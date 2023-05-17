@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='resultsearch.css')}}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+    <form method="POST">
+         <center>  <input type="search"  name="search" placeholder="Roll no...">
+           <button>Search</button></center> 
+       </form>
+       <a href="{{url_for('result')}}"><button style="float:right" class="btnstyle">Back</button></a>
+      <table cellpadding="10px">
+       <br>
+       <tr>
+           
+           <td><h2>Student Id</h2></td>
+           <td><h2>Semester</h2></td>
+           <td><h2>Total Marks</h2></td> 
+       </tr>
+       
+      
+       <tr>
+           <td>{{std}}</td>
+           <td>Semester1</td>
+           <td>{{sem1_g_total}}</td>
+        </tr>
+
+        <tr>
+            <td>{{std}}</td>
+            <td>Semester2</td>
+            <td>{{sem2_g_total}}</td>
+         </tr>
+       
+         
+         <tr>
+            <td>{{std}}</td>
+            <td>Semester3</td>
+            <td>{{sem3_g_total}}</td>
+         </tr>
+       
+         
+         <tr>
+            <td>{{std}}</td>
+            <td>Semester4</td>
+            <td>{{sem4_g_total}}</td>
+         </tr>
+       
+         
+         <tr>
+            <td>{{std}}</td>
+            <td>Semester5</td>
+            <td>{{sem5_g_total}}</td>
+         </tr>
+        
+         <tr>
+            <td>{{std}}</td>
+            <td>Semester6</td>
+            <td>{{sem6_g_total}}</td>
+         </tr>
+
+         <tr>
+            <td></td>
+            <td><b>Grand Total</b></td>
+            <td>{{g_total}}</td>
+            
+         </tr>
+        <tr>
+         <td><a href="{{url_for('downloadfile')}}">Download</td></a>
+        </tr>
+
+          
+      </table>
+      <div>
+         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>  
+   
+</body>
+</html>

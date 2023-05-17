@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='resultsearch.css')}}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+    <form method="POST">
+         <center><input type="search"  name="search" placeholder="Roll no...">
+           <button>Search</button></center> 
+       </form>
+       <a href="{{url_for('result')}}"><button style="float:right" class="btnstyle">Back</button></a>
+      <table cellpadding="10px">
+       <br>
+       <tr>
+           
+           <td><h2>Student Id</h2></td>
+           <td><h2>Course Id</h2></td>
+           <td><h2>Sem marks</h2></td>
+           <td><h2>Internal-1 marks</h2></td>
+           <td><h2>Internal-2 marks</h2></td>    
+           <td><h2>Total Marks</h2></td>   
+           <td><h2>Grade</h2></td>   
+
+       </tr>
+       
+       {% for i in real_data %}
+       <tr>
+           <td>{{i[0]}}</td>
+           <td>{{i[1]}}</td>
+           <td>{{i[2]}}</td>
+           <td>{{i[3]}}</td>
+           <td>{{i[4]}}</td>
+           <td>{{i[5]}}</td>
+           
+           {% if i[5]>95 %}
+           <td>A+</td>
+           
+           {% elif i[5]>90 %}
+           <td>A</td>
+           
+           {% elif i[5]>85 %}
+           <td>B+</td>
+           
+           {% elif i[5]>80 %}
+           <td>B</td>
+           
+           {% elif i[5]>70 %}
+           <td>C+</td>
+           
+           {% elif i[5]>60 %}
+           <td>C</td>
+
+           {% elif i[5]>50 %}
+           <td>D</td>
+
+           {% elif i[5]>40 %}
+           <td>E</td>
+           
+           {% else %}
+           <td>Fail</td>
+           {% endif %}
+           
+        </tr>
+       
+        {% endfor %}
+        {% if g_total %}
+        <tr>
+           
+            
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td><b>Total</b></td>
+           <td><b>{{g_total}}</b></td>
+         </tr>
+         {% endif %}
+
+      </table>
+      <div>
+         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>  
+   
+</body>
+</html>
