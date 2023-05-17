@@ -454,10 +454,10 @@ def report():
 def download_data():
     # Connect to MySQL
     conn = mysql.connector.connect(
-        host='your_host',
-        user='your_username',
-        password='your_password',
-        database='your_database'
+        host='localhost',
+        user='name',
+        password='admin',
+        database='sonuresults'
     )
 app.run(use_reloader=True,debug=True)
     
